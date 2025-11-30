@@ -1,14 +1,19 @@
 #!/usr/bin/python3
+
 import sys
 
-if len(sys.argv) < 3:
-    sys.exit()
+def main():
+    if len(sys.argv) < 3:
+        sys.exit()
 
-base = float(sys.argv[1])
-max_n = int(float(sys.argv[2]))
+    base = float(sys.argv[1])
+    max_n = int(float(sys.argv[2]))
 
-print(f"--- {base} の累乗テーブル ---")
+    print(f"--- {base:,} の累乗テーブル ---")
 
-for i in range(1, max_n + 1):
-    val = base ** i
-    print(f"{base} ^ {i} = {val}")
+    for i in range(1, max_n + 1):
+        val = base ** i
+        print(f"{base:,} ^ {i} = {val:,}")
+
+if __name__ == "__main__":
+    main()
