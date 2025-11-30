@@ -1,9 +1,9 @@
 # robosys2025
 ロボットシステム学課題１
 
-## 累乗コマンド
 ![test](https://github.com/taigerman0012/robosys2025/actions/workflows/test.yml/badge.svg)
 
+## 累乗コマンド
 標準入力から受け取った数字から、指定した数の累乗を計算し標準出力に表示するコマンドです。
 
 ## インストール方法
