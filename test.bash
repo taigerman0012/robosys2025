@@ -1,19 +1,22 @@
 #!/bin/bash -xv
-# SPDX-FileCopyrigtText: 2025 Taiga Doi
+# SPDX-FileCopyrightText: 2025 Taiga Doi
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
         echo ${1}行目が違うよ
-	res=1
+        res=1
 }
 
 res=0
 
-out=$(echo 1 2 3 4 | ./robosyshw1 2>&1)
-[ "${out}" = "((1+2)+3)+4 = 10" ] || ng "$LINENO"
+out=$(./report 2 3 | tail -n 1)
+[ "${out}" = "2.0 ^ 3 = 8.0" ] || ng "$LINENO"
 
-out=$(echo 1 1 1 1 | ./robosyshw1 2>&1)
-[ "${out}" = "no answer" ] || ng "$LINENO"
+out=$(./report 10 1 | tail -n 1)
+[ "${out}" = "10.0 ^ 1 = 10.0" ] || ng "$LINENO"
+
+out=$(./report)
+[ "${out}" = "" ] || ng "$LINENO"
 
 [ "$res" = 0 ] && echo OK
 exit $res
