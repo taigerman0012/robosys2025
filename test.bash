@@ -9,7 +9,7 @@ ng () {
 
 
 res=0 
-out=$(seq 5 | ./report)
+out=$(seq 5 | python3 ./report)
 [ "${out}" = 15 ] || ng "$LINENO"
 
 
