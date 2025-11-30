@@ -2,7 +2,7 @@
 import sys
 
 base = 0.0
-n = float(sys.argv[2])
+n = 0.0
 
 result = base ** (1 / n)
 
