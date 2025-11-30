@@ -8,9 +8,8 @@ ng () {
 }
 
 
-res=0
-
-out=$(seq 5 | ./plus)
+res=0 
+out=$(seq 5 | ./report)
 [ "${out}" = 15 ] || ng "$LINENO"
 
 
