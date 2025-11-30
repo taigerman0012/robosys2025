@@ -6,4 +6,4 @@ n = float(sys.argv[2])
 
 result = base ** (1 / n)
 
-print(result))
+print(result)
