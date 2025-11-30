@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 taigerman0012
+# SPDX-License-Identifier: BSD-3-Clause
 import sys
 
-base = 0.0
-n = 0.0
+ans = 0
+for line in sys.stdin:
+    try:
+        ans += float(line)
+    except:
+        continue
 
-result = base ** (1 / n)
-
-print(result)
+print(int(ans))
