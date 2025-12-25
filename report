@@ -3,8 +3,9 @@
 import sys
 
 def main():
+    # 引数が足りない場合は、終了ステータス 1 (エラー) で終了する
     if len(sys.argv) < 3:
-        sys.exit()
+        sys.exit(1)
 
     base = float(sys.argv[1])
     max_n = int(float(sys.argv[2]))
