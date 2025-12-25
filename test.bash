@@ -9,17 +9,17 @@ ng () {
 
 res=0
 
-out=$(./report 2 3)
+out=$(echo "2 3" | ./report)
 [ "$?" = 0 ] || ng "$LINENO"
 out=$(echo "$out" | tail -n 1)
-[ "${out}" = "2.0 ^ 3 = 8.0" ] || ng "$LINENO"
+[ "${out}" = "8.0" ] || ng "$LINENO"
 
-out=$(./report 10 1)
+out=$(echo "10 1" | ./report)
 [ "$?" = 0 ] || ng "$LINENO"
 out=$(echo "$out" | tail -n 1)
-[ "${out}" = "10.0 ^ 1 = 10.0" ] || ng "$LINENO"
+[ "${out}" = "10.0" ] || ng "$LINENO"
 
-out=$(./report)
+out=$(echo "" | ./report)
 [ "$?" = 0 ] && ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
