@@ -3,18 +3,21 @@
 import sys
 
 def main():
-    # 引数が足りない場合は、終了ステータス 1 (エラー) で終了する
-    if len(sys.argv) < 3:
+    try:
+        input_data = sys.stdin.read().split()
+
+        if len(input_data) < 2:
+            sys.exit(1)
+
+        base = float(input_data[0])
+        max_n = int(float(input_data[1]))
+
+    except ValueError:
         sys.exit(1)
-
-    base = float(sys.argv[1])
-    max_n = int(float(sys.argv[2]))
-
-    print(f"--- {base:,} の累乗テーブル ---")
 
     for i in range(1, max_n + 1):
         val = base ** i
-        print(f"{base:,} ^ {i} = {val:,}")
+        print(val)
 
 if __name__ == "__main__":
     main()
